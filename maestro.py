@@ -15,7 +15,7 @@ def get_ips_from_target_group(target_group_arn, region):
         TargetGroupArn=target_group_arn
     )
     
-    instance_ids = [target['Target']['Id'] for target in response['TargetHealthDescriptions'] if target['TargetHealth']['State'] == 'healthy']
+    instance_ids = [target['Target']['Id'] for target in response['TargetHealthDescriptions']]# if target['TargetHealth']['State'] == 'healthy']
     
     ips = []
     if instance_ids:
